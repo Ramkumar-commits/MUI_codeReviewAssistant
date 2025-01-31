@@ -44,7 +44,7 @@ export const getCodeReview = async (input) => {
     const isGithubUrl = input.startsWith('https://github.com/');
     const codeToReview = isGithubUrl ? await fetchGitHubCode(input) : input;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `Review this code and provide:
       1. ⭐ Code quality 
       2. 🐞 Potential bugs 
