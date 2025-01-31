@@ -46,15 +46,15 @@ export const getCodeReview = async (input) => {
 
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = `Review this code and provide:
-      1. Code quality 
-      2. Potential bugs 
-      3. Performance rating 
-      4. Best practices rating 
-      5. Improvements suggestions
-      6. Improved code snippet
+      1. ⭐ Code quality 
+      2. 🐞 Potential bugs 
+      3. 🚀 Performance rating 
+      4. 📏 Best practices rating 
+      5. 💡 Improvements suggestions
+      6. 📝 Improved code snippet
 
       ${isGithubUrl ? 'GitHub Source: ' + input : ''}
-      Code to review:
+      Code to review:n
       ${codeToReview}`;
 
     const result = await model.generateContent(prompt);
@@ -64,3 +64,6 @@ export const getCodeReview = async (input) => {
     throw new Error(`Failed to review code: ${error.message}`);
   }
 };
+     
+  
+ 
